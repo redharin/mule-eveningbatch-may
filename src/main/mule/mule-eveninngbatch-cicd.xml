@@ -13,6 +13,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:request-config>
 	<flow name="mule-eveninngbatch-cicdFlow" doc:id="0aaacdb5-2ec7-49de-9f9c-f925d430a558" >
 		<http:listener doc:name="Listener" doc:id="24c7a05b-aa15-4d1a-bae7-f7db31e545f6" config-ref="HTTP_Listener_config" path="/fetchCustomers"/>
+		<logger level="INFO" doc:name="Logger" doc:id="d11ccc49-f8d1-4fd2-821d-0c7331deab77" message="Message received"/>
 		<http:request method="GET" doc:name="Request" doc:id="e560a223-8222-4d3a-9111-d45fb8882519" config-ref="HTTP_Request_configuration" path="/api/getAllCustomers"/>
 		<ee:transform doc:name="Transform Message" doc:id="389a1bcb-05f8-4e53-82ce-02f7354b0947" >
 			<ee:message >
